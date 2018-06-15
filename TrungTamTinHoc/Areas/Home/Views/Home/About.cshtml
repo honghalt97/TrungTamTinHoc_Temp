@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+@section css{
+}
+@section scripts{
+}
+@using Resources;
+<!--Breadcrumb Banner Area Start-->
+<div class="breadcrumb-banner-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-text">
+                    <h1 class="text-center">@UserLang.MenuAbout</h1>
+                    <div class="breadcrumb-bar">
+                        <ul class="breadcrumb">
+                            <li><a href="@Url.RouteUrl("Home")">@UserLang.MenuHome</a></li>
+                            <li>@UserLang.MenuAbout</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Breadcrumb Banner Area-->
+<!--About Page Area Start-->
+<div class="about-page-area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="about-text-container">
+                    <p>Ngày nay, sự phát triển không ngừng của công nghệ thông tin đã làm cho các thiết bị công nghệ trở nên phổ biến trong cuộc sống hàng ngày của các gia đình, điều này đã tạo điều kiện cho các trẻ nhỏ tiếp cận với công nghệ sớm hơn.</p>
+                    <p>Trong thế giới công nghệ rộng lớn đó, ngoài các tiện ích giải trí, còn có rất nhiều “kho báu”, tiện ích hỗ trợ rất hay và hữu ích có thể giúp trẻ mở rộng hiểu biết cũng như phát triển tư duy sáng tạo của mình. Nhận thấy trẻ từ 7 đến 12 tuổi là lứa tuổi thích khám phá những điều mới lạ và dễ dàng tiếp thu các tri thức khoa học mới, chương trình Lập trình cho trẻ em - IPro đã ra đời và giảng dạy theo phương pháp STEM (Science- Technology- Engineering- Mathematics), một xu thế hiện nay của thế giới.</p>
+                    <p>Đến với IPro, các bé sẽ học cách làm việc trong môi trường nhóm, học cách giải quyết vấn đề, rèn luyện kỹ năng tư duy logic, phát triển trí tưởng tượng thông qua các trò chơi tương tác, các chương trình lập trình trực quan sinh động, các hoạt động lắp ráp và lập trình chuyển động cho robot Lego theo yêu cầu.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="skill-image">
+                    <img src="public/img/banner/6.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of About Page Area-->
+

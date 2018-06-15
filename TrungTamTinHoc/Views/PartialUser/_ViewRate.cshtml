@@ -1,0 +1,29 @@
+﻿@model float
+@{
+    float rate = Model;
+    int rate_star = (int)rate;
+    for (int i = 0; i < rate_star; i++)
+    {
+        <i class="zmdi zmdi-star"></i>
+    }
+    if (rate_star < 5)
+    {
+        float rate_haft = rate - rate_star;
+        if (rate_haft >= 0 && rate_haft < 0.25)
+        {
+            <i class="zmdi zmdi-star-outline"></i>
+        }
+        else if (rate_haft >= 0.25 && rate_haft < 0.75)
+        {
+            <i class="zmdi zmdi-star-half"></i>
+        }
+        else
+        {
+            <i class="zmdi zmdi-star"></i>
+        }
+    }
+    for (int i = rate_star + 1; i < 5; i++)
+    {
+        <i class="zmdi zmdi-star-outline"></i>
+    }
+}

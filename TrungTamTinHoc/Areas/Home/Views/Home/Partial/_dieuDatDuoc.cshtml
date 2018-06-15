@@ -1,0 +1,46 @@
+﻿@model IEnumerable<NhungDieuDatDuoc>
+@using TrungTamTinHoc.Areas.Home.Models.Schema
+@using Resources
+@{
+    List<NhungDieuDatDuoc> dieudatDuoc = new List<NhungDieuDatDuoc>();
+    if (Model != null)
+    {
+        dieudatDuoc = Model.ToList();
+    }
+}
+<div class="course-area section-padding you-will-get">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title-wrapper">
+                    <div class="section-title">
+                        <h3>@UserLang.WhatWillYouGet</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @for (int i = 0; i < dieudatDuoc.Count; i++)
+            {
+                string offest = "";
+                if(i == dieudatDuoc.Count - 1 && i % 2 == 0)
+                {
+                    offest = "col-sm-offset-3";
+                }
+            <div class="col-sm-6 @offest">
+                <div class="single-comment">
+                    <div class="author-image">
+                        <img src="@dieudatDuoc[i].Icon" alt="@dieudatDuoc[i].TieuDe">
+                    </div>
+                    <div class="comment-text">
+                        <div class="author-info">
+                            <h4><a href="javascript:void(0)">@dieudatDuoc[i].TieuDe</a></h4>
+                        </div>
+                        <p>@dieudatDuoc[i].NoiDung</p>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+﻿@model string
+@using Resources;
+@using TrungTamTinHoc.Areas.Home.Models.Schema
+<!--About Area Start-->
+<div class="about-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="about-container">
+                    <h3>@UserLang.WhyIpro</h3>
+                    @Html.Raw(Model)
+                    <a class="button-default" href="#">@UserLang.LearnMore</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of About Area-->

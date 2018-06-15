@@ -1,0 +1,41 @@
+﻿@model IEnumerable<GiangVien>
+@using TrungTamTinHoc.Areas.Home.Models.Schema
+@using Resources
+@{
+    List<GiangVien> danhSachGiangVien = new List<GiangVien>();
+    if (Model != null)
+    {
+        danhSachGiangVien = Model.ToList();
+    }
+}
+<!--Testimonial Area Start-->
+<div class="testimonial-area" style="margin-bottom: 70px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-lg-offset-0 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+                <div class="row">
+                    <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2">
+                        <div class="testimonial-image-slider text-center">
+                            @foreach (GiangVien giangVien in danhSachGiangVien)
+                            {
+                                <div class="sin-testiImage">
+                                    <img src="@giangVien.Avatar" alt="teacher @giangVien.IdUser" />
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-text-slider text-center">
+                    @foreach (GiangVien giangVien in danhSachGiangVien)
+                    {
+                        <div class="sin-testiText">
+                            <h2>@giangVien.Ho @giangVien.Ten</h2>
+                            <p>@giangVien.MoTaBanThan</p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Testimonial Area-->

@@ -1,0 +1,66 @@
+﻿@model CacKhoaHoc
+@{
+    CacKhoaHoc danhSachKhoaHoc = new CacKhoaHoc();
+    if (Model != null)
+    {
+        danhSachKhoaHoc = Model;
+    }
+    List<KhoaHoc> cacKhoaHoc = danhSachKhoaHoc.DanhSachKhoaHoc;
+}
+@using Resources;
+@using TrungTamTinHoc.Areas.Home.Models.Schema
+<!--Course Area Start-->
+<div class="course-area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title-wrapper">
+                    <div class="section-title">
+                        <h3>@UserLang.Courses</h3>
+                        <p>@danhSachKhoaHoc.GioiThieuChung</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @for (int i = 0; i < cacKhoaHoc.Count; i++)
+            {
+                string hidden = "";
+                if (i == cacKhoaHoc.Count - 1)
+                {
+                    hidden = "hidden-sm";
+                }
+                <div class="col-md-4 col-sm-6 @hidden">
+                    <div class="single-item">
+                        <div class="single-item-image overlay-effect">
+                            <a href="#"><img src="@cacKhoaHoc[i].AnhMinhHoa" alt="@cacKhoaHoc[i].TenKhoaHoc"></a>
+                        </div>
+                        <div class="single-item-text">
+                            <h4 class="text-center"><a href="#">@cacKhoaHoc[i].TenKhoaHoc</a></h4>
+                            <div class="single-item-text-info">
+                                <span>@UserLang.StartDate: <span>@(cacKhoaHoc[i].NgayKhaiGiang == null ? UserLang.RegularOpening : cacKhoaHoc[i].NgayKhaiGiang.Value.ToString("dd/MM/yyyy"))</span></span>
+                            </div>
+                            <p>@(cacKhoaHoc[i].TomTat.Length > 170 ? cacKhoaHoc[i].TomTat.Substring(0, 170) + "..." : cacKhoaHoc[i].TomTat)</p>
+                            <div class="single-item-content">
+                                <div class="single-item-comment-view">
+                                    <span><i class="zmdi zmdi-eye"></i>@cacKhoaHoc[i].SoLuongView</span>
+                                    <span><i class="zmdi zmdi-comments"></i>@cacKhoaHoc[i].SoLuongComment</span>
+                                </div>
+                                <div class="single-item-rating">
+                                    @Html.Partial("~/Views/PartialUser/_ViewRate.cshtml", cacKhoaHoc[i].SoLuongDanhGia == 0 ? 0f : (float)cacKhoaHoc[i].DiemDanhGia / (float)cacKhoaHoc[i].SoLuongDanhGia)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button-bottom">
+                            <a href="#" class="button-default">@UserLang.Register</a>
+                        </div>
+                    </div>
+                </div>
+            }
+            <div class="col-md-12 col-sm-12 text-center">
+                <a href="#" class="button-default button-large">@UserLang.AllCourses <i class="zmdi zmdi-chevron-right"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Course Area-->
