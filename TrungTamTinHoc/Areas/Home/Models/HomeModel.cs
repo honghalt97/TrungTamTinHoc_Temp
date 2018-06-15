@@ -25,6 +25,10 @@ namespace TrungTamTinHoc.Areas.Home.Models
         {
             context = new DataContext();
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public List<Slides> LoadSlide()
         {
             try
