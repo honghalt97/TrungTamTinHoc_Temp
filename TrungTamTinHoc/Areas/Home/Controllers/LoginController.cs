@@ -15,7 +15,7 @@ namespace TrungTamTinHoc.Areas.Home.Controllers
 {
     /// <summary>
     /// Class chứa các điều hướng liên quan đến login
-    /// Author       :   QuyPN - 028/05/2018 - create
+    /// Author       :   QuyPN - 28/05/2018 - create
     /// </summary>
     /// <remarks>
     /// Package      :   Home
@@ -26,7 +26,7 @@ namespace TrungTamTinHoc.Areas.Home.Controllers
     {
         /// <summary>
         /// Điều hướng đến trang login.
-        /// Author       :   QuyPN - 028/05/2018 - create
+        /// Author       :   QuyPN - 28/05/2018 - create
         /// </summary>
         /// <returns>Trang view login, nếu có lỗi sẽ rả về trang error</returns>
         /// <remarks>
@@ -46,7 +46,7 @@ namespace TrungTamTinHoc.Areas.Home.Controllers
             }
             catch (Exception e)
             {
-                return RedirectToAction("Error", "Error", new { area = "home", error = e.Message });
+                return RedirectToAction("Error", "Error", new { area = "error", error = e.Message });
             }
         }
         /// <summary>
@@ -138,7 +138,7 @@ namespace TrungTamTinHoc.Areas.Home.Controllers
             }
             catch (Exception e)
             {
-                return RedirectToAction("Error", "Error", new { area = "home", error = e.Message });
+                return RedirectToAction("Error", "Error", new { area = "error", error = e.Message });
             }
         }
     }

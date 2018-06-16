@@ -172,9 +172,11 @@
     <Compile Include="Areas\Admin\Controllers\AdminLoginController.cs" />
     <Compile Include="Areas\Error\Controllers\ErrorController.cs" />
     <Compile Include="Areas\Error\ErrorAreaRegistration.cs" />
+    <Compile Include="Areas\Home\Controllers\GuideLineController.cs" />
     <Compile Include="Areas\Home\Controllers\HomeController.cs" />
     <Compile Include="Areas\Home\Controllers\LoginController.cs" />
     <Compile Include="Areas\Home\HomeAreaRegistration.cs" />
+    <Compile Include="Areas\Home\Models\GuideLineModel.cs" />
     <Compile Include="Areas\Home\Models\HomeModel.cs" />
     <Compile Include="Areas\Home\Models\LoginModel.cs" />
     <Compile Include="Areas\Home\Models\Schema\Account.cs" />
@@ -2512,6 +2514,9 @@
     <Content Include="Areas\Home\Views\Home\Contact.cshtml" />
     <Content Include="Areas\Home\Views\Login\Index.cshtml" />
     <Content Include="Areas\Home\Views\Home\Partial\_dieuDatDuoc.cshtml" />
+    <Content Include="Areas\Home\Views\GuideLine\GuideLine.cshtml" />
+    <Content Include="Areas\Home\Views\GuideLine\TermsConditions.cshtml" />
+    <Content Include="Areas\Home\Views\GuideLine\PrivacyPolicy.cshtml" />
     <None Include="public\js\common\jquery.validate-vsdoc.js" />
     <Content Include="public\js\common\jquery.validate.js" />
     <Content Include="public\js\common\jquery.validate.unobtrusive.js" />

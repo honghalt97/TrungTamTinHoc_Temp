@@ -135,6 +135,9 @@
   <data name="EnterYourEmailAddress" xml:space="preserve">
     <value>Nhập email của bạn...</value>
   </data>
+  <data name="GuideLine" xml:space="preserve">
+    <value>Hướng dẫn sử dụng</value>
+  </data>
   <data name="HaveAnyQuestion" xml:space="preserve">
     <value>Bạn có thắc mắc, hãy liên hệ?</value>
   </data>

@@ -5,11 +5,29 @@ using System.Web;
 
 namespace TrungTamTinHoc.Areas.Home.Models.Schema
 {
+    /// <summary>
+    /// Class chứa danh sách các khóa học và thông tin giới thiệu chung khóa học.
+    /// Author       :   QuyPN - 16/06/2018 - create
+    /// </summary>
+    /// <remarks>
+    /// Package      :   Home.Models
+    /// Copyright    :   Team Noname
+    /// Version      :   1.0.0
+    /// </remarks>
     public class CacKhoaHoc
     {
         public string GioiThieuChung { set; get; }
         public List<KhoaHoc> DanhSachKhoaHoc { set; get; }
     }
+    /// <summary>
+    /// Class chứa các thuộc tính của 1 kháo học lấy từ DB cho việc hiển thị danh sách các khóa học trên trang chủ.
+    /// Author       :   QuyPN - 15/06/2018 - create
+    /// </summary>
+    /// <remarks>
+    /// Package      :   Home.Models
+    /// Copyright    :   Team Noname
+    /// Version      :   1.0.0
+    /// </remarks>
     public class KhoaHoc
     {
         public string BeautyId { set; get; }

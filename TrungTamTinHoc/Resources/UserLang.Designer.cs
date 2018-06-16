@@ -115,6 +115,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Guide line.
+        /// </summary>
+        public static string GuideLine {
+            get {
+                return ResourceManager.GetString("GuideLine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Have any question?.
         /// </summary>
         public static string HaveAnyQuestion {

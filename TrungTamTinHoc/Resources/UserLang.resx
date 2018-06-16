@@ -135,6 +135,9 @@
   <data name="EnterYourEmailAddress" xml:space="preserve">
     <value>Enter your email address...</value>
   </data>
+  <data name="GuideLine" xml:space="preserve">
+    <value>Guide line</value>
+  </data>
   <data name="HaveAnyQuestion" xml:space="preserve">
     <value>Have any question?</value>
   </data>
