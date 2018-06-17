@@ -1424,7 +1424,17 @@ body {
     content: "";
 }
 .box-select {z-index: 9; position: relative}
-    .box-select input[type="text"], .box-select input[type="password"] {
+.box-select .datetimepicker{
+    margin-bottom: 20px;
+}
+    .box-select .datetimepicker input[type="tel"] {
+        margin-bottom: 0px;
+    }
+    .box-select input[type="text"],
+    .box-select input[type="password"],
+    .box-select input[type="email"],
+    .box-select input[type="tel"],
+    .box-select select {
         background: #fff none repeat scroll 0 0;
         border: 0 none;
         color: #666;
@@ -1474,6 +1484,9 @@ body {
     font-weight: 100;
     margin-bottom: 13px;
 }
+    .text-login a {
+        color: #fff;
+    }
 .course-page .single-item {margin-bottom: 178px;}
 .course-page .col-md-4:nth-child(4) .single-item, .course-page .col-md-4:nth-child(5) .single-item , .course-page .col-md-4:nth-child(6) .single-item {
     margin-bottom: 83px;

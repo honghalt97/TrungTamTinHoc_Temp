@@ -30,6 +30,11 @@ namespace TrungTamTinHoc.Areas.Home
                 new { controller = "Login", action = "Logout", id = UrlParameter.Optional }
             );
             context.MapRoute(
+                "homeCreateAccount",
+                "home/create-account",
+                new { controller = "RegisterAccount", action = "CreateAccount", id = UrlParameter.Optional }
+            );
+            context.MapRoute(
                 "homeDefault",
                 "home/{controller}/{action}/{id}",
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional }

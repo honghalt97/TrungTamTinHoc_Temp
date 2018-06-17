@@ -175,6 +175,7 @@
     <Compile Include="Areas\Home\Controllers\GuideLineController.cs" />
     <Compile Include="Areas\Home\Controllers\HomeController.cs" />
     <Compile Include="Areas\Home\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Home\Controllers\RegisterAccountController.cs" />
     <Compile Include="Areas\Home\HomeAreaRegistration.cs" />
     <Compile Include="Areas\Home\Models\GuideLineModel.cs" />
     <Compile Include="Areas\Home\Models\HomeModel.cs" />
@@ -183,6 +184,7 @@
     <Compile Include="Areas\Home\Models\Schema\GiangVien.cs" />
     <Compile Include="Areas\Home\Models\Schema\HomeData.cs" />
     <Compile Include="Areas\Home\Models\Schema\KhoaHoc.cs" />
+    <Compile Include="Areas\Home\Models\Schema\NewAccount.cs" />
     <Compile Include="Areas\Home\Models\Schema\NhungDieuDatDuoc.cs" />
     <Compile Include="Areas\Home\Models\Schema\Slides.cs" />
     <Compile Include="Areas\Home\Models\Schema\SocialAccount.cs" />
@@ -2517,6 +2519,7 @@
     <Content Include="Areas\Home\Views\GuideLine\GuideLine.cshtml" />
     <Content Include="Areas\Home\Views\GuideLine\TermsConditions.cshtml" />
     <Content Include="Areas\Home\Views\GuideLine\PrivacyPolicy.cshtml" />
+    <Content Include="Areas\Home\Views\RegisterAccount\Register.cshtml" />
     <None Include="public\js\common\jquery.validate-vsdoc.js" />
     <Content Include="public\js\common\jquery.validate.js" />
     <Content Include="public\js\common\jquery.validate.unobtrusive.js" />
@@ -3819,6 +3822,7 @@
     <Content Include="public\js\admin\dashboard\index.js" />
     <Content Include="public\js\home\login\index.js" />
     <Content Include="public\js\home\login\socialLogin.js" />
+    <Content Include="public\js\home\registerAccount\register.js" />
     <Content Include="public\js\layout-user\home.js" />
     <Content Include="public\js\layout-user\jquery.counterup.js" />
     <Content Include="public\js\layout-user\jquery.meanmenu.js" />

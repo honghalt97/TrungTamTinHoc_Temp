@@ -34,6 +34,8 @@
         '31': 'Mật khẩu không chính xác, bạn đã nhập sai {0} lần, bạn chỉ có {1} lần nhập sai liên tiếp, nếu vượt quá, tài khoản của bạn sẽ bị khóa trong {2} giờ',
         '32': 'Bạn đã nhập sai 5 lần liên tiếp, tài khoản của bạn sẽ bị khóa đến {0}',
         '33': 'Xác thực tài khoản không hợp lệ',
+        '34': 'Tên đăng nhập phải có ít nhất 6 ký tự (chỉ được chứa các ký tự chữ cái, chữ số và ._-)',
+        '35': 'Vui lòng đồng ý với điều khoản sử dụng của chúng tôi',
         '100': 'Có lỗi xảy ra trong quá trình xử lý, vui lòng thử lại'
     },
     'en':
@@ -71,6 +73,8 @@
         '31': 'Mật khẩu không chính xác, bạn đã nhập sai {0} lần, bạn chỉ có {1} lần nhập sai liên tiếp, nếu vượt quá, tài khoản của bạn sẽ bị khóa trong {2} giờ',
         '32': 'Bạn đã nhập sai {0} lần liên tiếp, tài khoản của bạn sẽ bị khóa đến {1}',
         '33': 'Xác thực tài khoản không hợp lệ',
+        '34': 'Tên đăng nhập phải có ít nhất 6 ký tự (chỉ được chứa các ký tự chữ cái, chữ số và ._-)',
+        '35': 'Vui lòng đồng ý với điều khoản sử dụng của chúng tôi',
         '100' : 'Có lỗi xảy ra trong quá trình xử lý, vui lòng thử lại'
     }
 };

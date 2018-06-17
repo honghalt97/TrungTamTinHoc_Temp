@@ -1,0 +1,102 @@
+﻿@{
+    ViewBag.Title = "Register account";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+@section css{
+    @Styles.Render("~/public/css/registerAccount")
+}
+@section scripts{
+    @Scripts.Render("~/public/js/registerAccount")
+}
+@using Resources;
+<!--Breadcrumb Banner Area Start-->
+<div class="breadcrumb-banner-area pb-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-text">
+                    <h1 class="text-center no-line">@UserLang.Register</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Breadcrumb Banner Area-->
+<!--Search Category Start-->
+<div class="search-category mb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <form id="form-register" action="@Url.RouteUrl("homeCreateAccount")" method="post">
+                    <div class="form-container">
+                        <div class="box-select">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <input type="text" name="Username" id="Username" class="required alphanumeric" maxlength="50" tabindex="1" placeholder="@UserLang.Username" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <input type="text" name="Ho" id="Ho" class="required" maxlength="50" tabindex="2" placeholder="@UserLang.FirstName" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <input type="text" name="Ten" id="Ten" class="required" maxlength="50" tabindex="3" placeholder="@UserLang.LastName" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <select name="GioiTinh" id="GioiTinh" tabindex="4">
+                                        <option value="true">@UserLang.Male</option>
+                                        <option value="false">@UserLang.Female</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="input-group datetimepicker">
+                                        <input type="tel" class="date required" id="NgaySinh" name="NgaySinh" maxlength="8" tabindex="5" placeholder="@UserLang.DateOfBirth"/>
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <input type="email" name="Email" id="Email" class="required email" maxlength="255" tabindex="6" placeholder="Email" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <input type="password" name="Password" id="Password" class="required" maxlength="50" tabindex="7" placeholder="@UserLang.Password" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <input type="password" name="ConfirmPassword" id="ConfirmPassword" class="required" maxlength="50" tabindex="8" placeholder="@UserLang.ConfirmPassword" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <label class="custom-check">
+                                        <span class="text-login"><a href="@Url.RouteUrl("TermsConditions")" target="_blank">@UserLang.IAgreeWithTermsConditions</a></span>
+                                        <input type="checkbox" id="Agree" value="1" tabindex="9">
+                                        <span class="checkmark"><span class="check"></span></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <button type="button" id="btn-regist" tabindex="5">@UserLang.Register</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Search Category-->

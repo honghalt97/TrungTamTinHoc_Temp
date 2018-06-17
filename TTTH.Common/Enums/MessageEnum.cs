@@ -18,12 +18,14 @@ namespace TTTH.Common.Enums
             SaiNgayBatDauVaKetThuc = 7,
             PhaiLonHon0 = 11,
             SaiFormatMatKhau = 19,
+            XacNhanMatKhauSai = 20,
             KhongCoTaiKhoan = 28,
             TaiKhoanBiKhoa = 29,
             ChuaKichHoatTaiKhoan = 30,
             MatKhauKhongDung = 31,
             SaiQuaSoLanChoPhep = 32,
             XacThucKhongHopLe = 33,
+            TenDangNhapSai = 34,
             ServerError = 100
         }
     }

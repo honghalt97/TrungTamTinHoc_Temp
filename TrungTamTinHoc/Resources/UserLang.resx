@@ -123,8 +123,14 @@
   <data name="AllCourses" xml:space="preserve">
     <value>All courses</value>
   </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Confirm password</value>
+  </data>
   <data name="Courses" xml:space="preserve">
     <value>COURSES</value>
+  </data>
+  <data name="DateOfBirth" xml:space="preserve">
+    <value>Date of birth</value>
   </data>
   <data name="Detail" xml:space="preserve">
     <value>Detail</value>
@@ -135,14 +141,26 @@
   <data name="EnterYourEmailAddress" xml:space="preserve">
     <value>Enter your email address...</value>
   </data>
+  <data name="Female" xml:space="preserve">
+    <value>Female</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>First name</value>
+  </data>
   <data name="GuideLine" xml:space="preserve">
     <value>Guide line</value>
   </data>
   <data name="HaveAnyQuestion" xml:space="preserve">
     <value>Have any question?</value>
   </data>
+  <data name="IAgreeWithTermsConditions" xml:space="preserve">
+    <value>I agree with terms conditions</value>
+  </data>
   <data name="Language" xml:space="preserve">
     <value>Language</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Last name</value>
   </data>
   <data name="LearnMore" xml:space="preserve">
     <value>Learn more</value>
@@ -155,6 +173,9 @@
   </data>
   <data name="LostPassword" xml:space="preserve">
     <value>Lost your password</value>
+  </data>
+  <data name="Male" xml:space="preserve">
+    <value>Male</value>
   </data>
   <data name="MenuAbout" xml:space="preserve">
     <value>About</value>

@@ -18,6 +18,7 @@ $(document).ready(function () {
 function InitLogin() {
     try {
         FillRemember();
+        $('[tabindex="1"]').first().focus();
     }
     catch (e) {
         jMessage(0, function (ok) {

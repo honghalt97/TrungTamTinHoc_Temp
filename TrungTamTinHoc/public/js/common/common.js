@@ -5,7 +5,7 @@
  * Copyright    :   ĐHBKĐN
  * Version      :   1.0.0
  */
-var MsgNO = {
+var MsgNo = {
     BatBuocNhap : 1,
     SaiMaxlength : 2,
     SaiMinLength : 3,
@@ -14,13 +14,16 @@ var MsgNO = {
     SaiFormatSDT : 6,
     SaiNgayBatDauVaKetThuc: 7,
     PhaiLonHon0 : 11,
-    SaiFormatMatKhau : 19,
+    SaiFormatMatKhau: 19,
+    XacNhanMatKhauSai: 20,
     KhongCoTaiKhoan : 28,
     TaiKhoanBiKhoa : 29,
     ChuaKichHoatTaiKhoan : 30,
     MatKhauKhongDung : 31,
     SaiQuaSoLanChoPhep : 32,
-    XacThucKhongHopLe : 33,
+    XacThucKhongHopLe: 33,
+    TenDangNhapSai: 34,
+    ChuaDongYVoiDieuKhoan: 35,
     ServerError : 100
 }
 // Format for datepicker
@@ -44,11 +47,11 @@ $(document).ready(function () {
     //        <span class="glyphicon glyphicon-calendar"></span>
     //    </span>
     //</div>
-    try {
+    //try {
         $(".datetimepicker").datetimepicker(date_option).on("dp.show", function () {
             return $(this).data('DateTimePicker').defaultDate(new Date());
         });
-    }catch(e){}
+    //}catch(e){}
     // Gắn monthpicker cho tất cả các input có class là datetimepicker
     //<div class="input-group monthpicker">
     //    <input type="text" class="form-control date" maxlength="8" />
@@ -91,9 +94,22 @@ $(document).ready(function () {
  * Output       :
  */
 $(document).on('change', 'input, textarea', function () {
-    if ($(this).val() != '') {
+    if ($(this).hasClass("item-error") && $(this).val() != '') {
         $(this).removeClass('item-error');
         $(this).removeAttr('has-balloontip-message');
+        $("#has-balloontip-class").remove();
+    }
+});
+/*
+ * Sự kiện xóa thông báo lỗi check vào checkbox
+ * Author       :   QuyPN - 17/06/2018 - create
+ * Param        :
+ * Output       :
+ */
+$(document).on('change', 'input[type="checkbox"]', function () {
+    if ($(this).hasClass("item-error") && $(this).is(":checked")) {
+        $(this).parents(".custom-check").find(".checkmark").first().removeClass('item-error');
+        $(this).parents(".custom-check").find(".checkmark").first().removeAttr('has-balloontip-message');
         $("#has-balloontip-class").remove();
     }
 });
@@ -104,7 +120,7 @@ $(document).on('change', 'input, textarea', function () {
  * Output       :
  */
 $(document).on('change', 'select', function () {
-    if ($(this).val() != -1) {
+    if ($(this).hasClass("item-error") && $(this).val() != -1) {
         $(this).removeClass('item-error');
         $(this).removeAttr('has-balloontip-message');
         $("#has-balloontip-class").remove();
@@ -195,6 +211,46 @@ $(document).on('keydown', 'input.date, input.month, input.numeric', function (ev
             || (event.shiftKey && (event.keyCode > 47 && event.keyCode < 58))) {
         event.preventDefault();
     }
+});
+/*
+ * Chỉ cho phép nhập ký tự số, chữ, dấu -,_,.
+ * Author       :   QuyPN - 16/06/2018 - create
+ * Param        :
+ * Output       :
+ */
+$(document).on('keydown', 'input.alphanumeric', function (event) {
+    if ((!((event.keyCode > 47 && event.keyCode < 58)
+        || (event.keyCode > 64 && event.keyCode < 91)
+        || (event.keyCode > 95 && event.keyCode < 106) // numpad
+        || event.keyCode == 116 // F5
+        || event.keyCode == 46 // del
+        || event.keyCode == 35 // end
+        || event.keyCode == 36 // home
+        || event.keyCode == 37 // ←
+        || event.keyCode == 39 // →
+        || event.keyCode == 8 // backspace
+        || event.keyCode == 9 // tab
+        || event.keyCode == 191 // forward slash
+        || event.keyCode == 92 // forward slash
+        || event.keyCode == 111 // divide
+        || event.keyCode == 189 // -_
+        || event.keyCode == 190 // .
+        || (event.shiftKey && event.keyCode == 35) // shift
+        || (event.shiftKey && event.keyCode == 36)
+        || event.ctrlKey))
+        || (event.shiftKey && event.keyCode == 190)
+        || (event.shiftKey && (event.keyCode > 47 && event.keyCode < 58))) {
+        event.preventDefault();
+    }
+});
+/*
+ * Xóa các ký tự không phải là ký tự số, chữ, dấu -,_,.
+ * Author       :   QuyPN - 16/06/2018 - create
+ * Param        :
+ * Output       :
+ */
+$(document).on('blur', 'input.alphanumeric', function (event) {
+    $(this).val($(this).val().replace(/[^a-zA-Z0-9_.-]/g, ''));
 });
 /*
  * Quy định các ký tự được nhập cho các input số thực
@@ -758,5 +814,22 @@ function createMessage(msgNo, text1, text2, text3) {
     }
     catch (e) {
         return 'vi';
+    }
+}
+
+/*
+ * Tạo ra kiểu ngày tháng từ string định dạng dd/MM/yyyy
+ * Author       :   QuyPN - 17/06/2018 - create
+ * Param        :   dateStr - chuỗi ngày tháng có định dạng dd/MM/yyyy
+ * Output       :   string đầu vào nếu có lỗi, nếu thành công trả về kiểu dữ liệu ngày
+ */
+function ddmmyyyyToDate(dateStr) {
+    try{
+        return new Date(parseInt(dateStr.substring(6), 10),
+                 parseInt(dateStr.substring(3, 5), 10) - 1,
+                 parseInt(dateStr.substring(0, 2), 10))
+    }
+    catch (e) {
+        return dateStr;
     }
 }
