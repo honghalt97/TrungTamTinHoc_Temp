@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TrungTamTinHoc.Areas.Home.Models;
 using TrungTamTinHoc.Areas.Home.Models.Schema;
 using TTTH.Validate;
 using static TTTH.Common.Enums.ConstantsEnum;
@@ -51,7 +52,7 @@ namespace TrungTamTinHoc.Areas.Home.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    
+                    new RegisterModel().TaoAccount(account);
                 }
                 else
                 {

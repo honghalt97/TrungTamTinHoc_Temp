@@ -17,6 +17,7 @@ namespace TrungTamTinHoc.App_Start.Bundle
             ));
 
             bundles.Add(new ScriptBundle("~/public/js/registerAccount").Include(
+                "~/public/js/common/md5.js",
                 "~/public/assets/moment/moment.js",
                 "~/public/assets/bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js",
                 "~/public/js/home/registerAccount/register.js"

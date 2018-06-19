@@ -4,14 +4,15 @@
  * https://github.com/Eonasdan/bootstrap-datetimepicker/
  */
 .bootstrap-datetimepicker-widget {
-  list-style: none;
+    list-style: none;
 }
-.bootstrap-datetimepicker-widget.dropdown-menu {
-  display: block;
-  margin: 2px 0;
-  padding: 4px;
-  width: 19em;
-}
+    .bootstrap-datetimepicker-widget.dropdown-menu {
+        display: block;
+        margin: 2px 0;
+        padding: 4px;
+        width: 19em;
+        z-index: 100;
+    }
 @media (min-width: 768px) {
   .bootstrap-datetimepicker-widget.dropdown-menu.timepicker-sbs {
     width: 38em;

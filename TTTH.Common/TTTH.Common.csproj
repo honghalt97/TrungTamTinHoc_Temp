@@ -90,6 +90,7 @@
   <ItemGroup>
     <Compile Include="BaoMat.cs" />
     <Compile Include="Common.cs" />
+    <Compile Include="EmailService.cs" />
     <Compile Include="Enums\ConstantsEnum.cs" />
     <Compile Include="Enums\MessageEnum.cs" />
     <Compile Include="Filters\AdminLogin.cs" />

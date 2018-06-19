@@ -61,13 +61,13 @@ function DangKyTaiKhoan() {
                     Ho: $('#Ho').val(),
                     Ten: $('#Ten').val(),
                     GioiTinh: $('#GioiTinh').val(),
-                    NgaySinh: ddmmyyyyToDate($('#GioiTinh').val()),
+                    NgaySinh: $('#NgaySinh').val(),
                     Email: $('#Email').val(),
                     Password: calcMD5($('#Password').val()),
-                    ConfirmPassword: $('#ConfirmPassword').val(),
+                    ConfirmPassword: calcMD5($('#ConfirmPassword').val()),
                     Agree: $('#Agree').is(":checked") ? true : false
                 },
-                success: CreateAccountRespon
+                success: CreateAccountResponse
             });
         }
         else {
