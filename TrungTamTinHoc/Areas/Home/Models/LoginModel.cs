@@ -22,7 +22,7 @@ namespace TrungTamTinHoc.Areas.Home.Models
 {
     /// <summary>
     /// Class chứa các phương thức liên quan đến login
-    /// Author       :   QuyPN - 028/05/2018 - create
+    /// Author       :   QuyPN - 28/05/2018 - create
     /// </summary>
     /// <remarks>
     /// Package      :   Home.Models
@@ -68,6 +68,7 @@ namespace TrungTamTinHoc.Areas.Home.Models
                 {
                     result.MsgNo = (int)MsgNO.ChuaKichHoatTaiKhoan;
                     result.Code = 204;
+                    new RegisterModel().SendEmail(taiKhoan);
                     // Thiếu code gửi email
                 }
                 else if (taiKhoan.Password != BaoMat.GetMD5(account.Password))
@@ -248,6 +249,7 @@ namespace TrungTamTinHoc.Areas.Home.Models
                             Email = socialAccount.Email,
                             TokenActive = "",
                             IsActived = true,
+                            IsActiveEmail = true,
                             SoLanDangNhapSai = 0,
                             KhoaTaiKhoanDen = DateTime.Now
                         };

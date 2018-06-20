@@ -36,6 +36,10 @@
         '33': 'Xác thực tài khoản không hợp lệ',
         '34': 'Tên đăng nhập phải có ít nhất 6 ký tự (chỉ được chứa các ký tự chữ cái, chữ số và ._-)',
         '35': 'Vui lòng đồng ý với điều khoản sử dụng của chúng tôi',
+        '36': 'Tên đăng nhập này đã tồn tại',
+        '37': 'Email này đã tồn tại',
+        '38': 'Email này không tồn tại trong hệ thống',
+        '39': 'Mail kích hoạt đã được gửi đến địa chỉ email bạn đăng ký, vui lòng kiểm tra email để kích hoạt tài khoản',
         '100': 'Có lỗi xảy ra trong quá trình xử lý, vui lòng thử lại'
     },
     'en':
@@ -75,6 +79,10 @@
         '33': 'Xác thực tài khoản không hợp lệ',
         '34': 'Tên đăng nhập phải có ít nhất 6 ký tự (chỉ được chứa các ký tự chữ cái, chữ số và ._-)',
         '35': 'Vui lòng đồng ý với điều khoản sử dụng của chúng tôi',
+        '36': 'Tên đăng nhập này đã tồn tại',
+        '37': 'Email này đã tồn tại',
+        '38': 'Email này không tồn tại trong hệ thống',
+        '39': 'Mail kích hoạt đã được gửi đến địa chỉ email bạn đăng ký, vui lòng kiểm tra email để kích hoạt tài khoản',
         '100' : 'Có lỗi xảy ra trong quá trình xử lý, vui lòng thử lại'
     }
 };
@@ -117,6 +125,13 @@ var _typeMsg = {
     '30': 4,
     '31': 4,
     '32': 4,
+    '33': 4,
+    '34': 4,
+    '35': 4,
+    '36': 4,
+    '37': 4,
+    '38': 4,
+    '39': 2,
     '100': 4
 };
 var _title = {

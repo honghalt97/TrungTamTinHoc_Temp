@@ -61,6 +61,51 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Active Account.
+        /// </summary>
+        public static string ActiveAccount {
+            get {
+                return ResourceManager.GetString("ActiveAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have successfully activated your account, please.
+        /// </summary>
+        public static string ActiveAccountPart1 {
+            get {
+                return ResourceManager.GetString("ActiveAccountPart1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to to continue using the system.
+        /// </summary>
+        public static string ActiveAccountPart2 {
+            get {
+                return ResourceManager.GetString("ActiveAccountPart2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Account activation information is incorrect, please re-enter your registered email to activate your account.
+        /// </summary>
+        public static string ActiveAccountPart3 {
+            get {
+                return ResourceManager.GetString("ActiveAccountPart3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Account activation information has expired, please re-enter the registered email to activate the account.
+        /// </summary>
+        public static string ActiveAccountPart4 {
+            get {
+                return ResourceManager.GetString("ActiveAccountPart4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Album.
         /// </summary>
         public static string Album {
@@ -322,6 +367,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Register Success.
+        /// </summary>
+        public static string RegisterSuccess {
+            get {
+                return ResourceManager.GetString("RegisterSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have successfully registered your account, please check your registered email and click on the attached link to activate your account.
+        /// </summary>
+        public static string RegisterSuccessPart1 {
+            get {
+                return ResourceManager.GetString("RegisterSuccessPart1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Regular opening.
         /// </summary>
         public static string RegularOpening {
@@ -336,6 +399,15 @@ namespace Resources {
         public static string RememberLogin {
             get {
                 return ResourceManager.GetString("RememberLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Resend mail.
+        /// </summary>
+        public static string ResendMail {
+            get {
+                return ResourceManager.GetString("ResendMail", resourceCulture);
             }
         }
         

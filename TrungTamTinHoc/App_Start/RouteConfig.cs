@@ -70,6 +70,20 @@ namespace TrungTamTinHoc
             ).DataTokens.Add("area", "home");
 
             routes.MapRoute(
+                name: "TaoTaiKhoanThanhCong",
+                url: "dang-ky-thanh-cong",
+                defaults: new { controller = "RegisterAccount", action = "CreateAccountSuccess", id = UrlParameter.Optional },
+                namespaces: new string[] { "MvcNangCao.Areas.Home.Controllers" }
+            ).DataTokens.Add("area", "home");
+
+            routes.MapRoute(
+                name: "KichHoatTaiKhoan",
+                url: "kich-hoat-tai-khoan",
+                defaults: new { controller = "RegisterAccount", action = "AciveAccount", id = UrlParameter.Optional },
+                namespaces: new string[] { "MvcNangCao.Areas.Home.Controllers" }
+            ).DataTokens.Add("area", "home");
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

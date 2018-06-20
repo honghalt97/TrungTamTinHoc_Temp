@@ -84,7 +84,7 @@ function CheckLoginSuccess(res) {
     try {
         if (res.Code == 200) {
             callLoading();
-            $.cookie('token', res.ThongTinBoSung1, { expires: 1, path: '/' });
+            $.cookie('token', res.ThongTinBoSung1, { expires: timeToken, path: '/' });
             CheckRemember();
             window.location = "/";
         } else if (res.Code == 201) {

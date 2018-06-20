@@ -5,6 +5,8 @@
  * Copyright    :   Team Noname
  * Version      :   1.0.0
  */
+var errorUsername = false;
+var errorEmail = false;
 $(document).ready(function () {
     InitRegister();
     InitEventRegister();
@@ -35,6 +37,12 @@ function InitEventRegister() {
         $('#btn-regist').on('click', function () {
             DangKyTaiKhoan();
         });
+        $('#Username').on('blur', function () {
+            CheckExistAccount(this, 1);
+        });
+        $('#Email').on('blur', function () {
+            CheckExistAccount(this, 2);
+        });
     }
     catch (e) {
         jMessage(0, function (ok) {
@@ -51,7 +59,7 @@ function DangKyTaiKhoan() {
     try {
         var error1 = validate('#form-register');
         var error2 = validateValue();
-        if (!error1 && !error2) {
+        if (!error1 && !error2 && !errorUsername && !errorEmail) {
             $.ajax({
                 type: $('#form-register').attr('method'),
                 url: $('#form-register').attr('action'),
@@ -71,12 +79,64 @@ function DangKyTaiKhoan() {
             });
         }
         else {
+            var lang = getLang();
+            if (errorUsername) {
+                $('#Username').errorStyle(_text[lang][MsgNo.TenDangNhapDaTonTai]);
+            }
+            if (errorEmail) {
+                $('#Email').errorStyle(_text[lang][MsgNo.EmailDaTonTai]);
+            }
             $('.item-error').first().focus();
         }
     }
     catch (e) {
         jMessage(0, function (ok) {
         }, '<b>DangKyTaiKhoan:</b> ' + e.message, 4);
+    }
+}
+
+/*
+ * Kiểm tra tên đăng nhập hoặc email đã tồn tại trong hệ thống hay chưa
+ * Author       :   QuyPN - 20/06/2018 - create
+ * Param        :   input - text box nhập username hoặc email
+ * Param        :   type - 1. check username; 2. check email
+ * Output       :   true nếu có lỗi - false nếu không có lỗi
+ */
+function CheckExistAccount(input, type) {
+    try {
+        if ($(input).val() == '') {
+            return;
+        }
+        var lang = getLang();
+        $.ajax({
+            type: 'GET',
+            url: url.checkExistAccount + '?value=' + $(input).val() + '&&type=' + type,
+            success: function (res) {
+                if (res == 'True') {
+                    $(input).errorStyle(_text[lang][type == 1 ? MsgNo.TenDangNhapDaTonTai : MsgNo.EmailDaTonTai]);
+                    if (type == 1) {
+                        errorUsername = true;
+                    }
+                    else {
+                        errorEmail = true;
+                    }
+                    
+                }
+                else {
+                    if (type == 1) {
+                        errorUsername = false;
+                    }
+                    else {
+                        errorEmail = false;
+                    }
+                }
+            },
+            global: false
+        });
+    }
+    catch (e) {
+        jMessage(0, function (ok) {
+        }, '<b>CheckExistAccount:</b> ' + e.message, 4);
     }
 }
 
@@ -125,7 +185,16 @@ function validateValue() {
  */
 function CreateAccountResponse(res) {
     try{
-
+        if (res.Code == 200) {
+            callLoading();
+            $.cookie('tokenAccount', res.ThongTinBoSung1, { expires: timeToken, path: '/' });
+            window.location = url.createAccountSuccess;
+        } else if (res.Code == 201) {
+            fillError(res.ListError);
+            $('.item-error').first().focus();
+        } else {
+            jMessage(res.MsgNo, function (ok) { });
+        }
     }
     catch (e) {
         jMessage(0, function (ok) {

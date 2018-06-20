@@ -1,0 +1,60 @@
+﻿@model ResponseInfo
+@{
+    ViewBag.Title = "Kích hoạt tài khoản";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+@section css{
+    @Styles.Render("~/public/css/register")
+}
+@section scripts{
+    <script>
+        var code = '@Model.Code';
+        var url = {
+            sendEmail: '@Url.RouteUrl("homeSendEmail")'
+        }
+    </script>
+    @Scripts.Render("~/public/js/activeAccount")
+}
+@using Resources;
+@using TTTH.Common;
+<!--Breadcrumb Banner Area Start-->
+<div class="breadcrumb-banner-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-text">
+                    <h1 class="text-center no-line">@UserLang.ActiveAccount</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Breadcrumb Banner Area-->
+<div class="search-category mb-70 mt-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 hidden 200">
+                <p>
+                    @UserLang.ActiveAccountPart1 <a href="@Url.RouteUrl("UserLogin")">@UserLang.Login</a> @UserLang.ActiveAccountPart2.
+                </p>
+            </div>
+            <div class="col-md-6 col-md-offset-3 hidden 202 203">
+                <p class="hidden 202">
+                    @UserLang.ActiveAccountPart3.
+                </p>
+                <p class="hidden 203">
+                    @UserLang.ActiveAccountPart4.
+                </p>
+                <div class="row form-email mt-50">
+                    <div class="col-sm-8">
+                        <input type="email" name="Email" id="Email" class="required" maxlength="255" tabindex="1" placeholder="Email" />
+                    </div>
+                    <div class="col-sm-4">
+                        <button type="button" id="btn-send-email" tabindex="2">@UserLang.ResendMail</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

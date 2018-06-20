@@ -33,7 +33,11 @@ namespace TTTH.DataBase.Schema
         [StringLength(100)]
         public string TokenActive { get; set; }
 
+        public DateTime? TimeOfToken { set; get; }
+
         public bool IsActived { get; set; }
+
+        public bool IsActiveEmail { get; set; }
 
         public int IdUser { get; set; }
 

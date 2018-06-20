@@ -21,6 +21,8 @@ namespace TTTH.Common
     /// </remarks>
     public class Common
     {
+        public static string defaultAvata = "http://2.bp.blogspot.com/-Fl8NZJZFq6w/U02LSHQ7iII/AAAAAAAAAHg/zpzikQfynpM/s1600/WAPHAYVL.MOBI-CONDAU+(11).gif";
+        public static string domain = @"https://localhost:44371/";
         /// <summary>
         /// Sinh chuỗi token ngẫu nhiên theo id account đăng nhập, độ dài mặc định 40 ký tự.
         /// Author       :   QuyPN - 06/05/2018 - create
@@ -44,6 +46,31 @@ namespace TTTH.Common
                 token += tmp.Substring(ran.Next(0, 63), 1);
             }
             token += id;
+            return token;
+        }
+        /// <summary>
+        /// Sinh chuỗi token ngẫu nhiên theo id account đăng nhập, độ dài mặc định 40 ký tự.
+        /// Author       :   QuyPN - 06/05/2018 - create
+        /// </summary>
+        /// <param name="str">
+        /// Chuỗi không trùng nhau sẽ cộng thêm vào token.
+        /// </param>
+        /// <param name="length">
+        /// Dộ dài của token, mặc định 40 ký tự
+        /// </param>
+        /// <returns>
+        /// Chuỗi token.
+        /// </returns>
+        public static string GetToken(string str, int length = 80)
+        {
+            string token = "";
+            Random ran = new Random();
+            string tmp = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-";
+            for (int i = 0; i < length; i++)
+            {
+                token += tmp.Substring(ran.Next(0, 63), 1);
+            }
+            token += str;
             return token;
         }
         /// <summary>
@@ -141,7 +168,7 @@ namespace TTTH.Common
             {
                 DataContext context = new DataContext();
                 string lang = Common.GetLang();
-                CaiDatHeThong caiDat = context.CaiDatHeThong.FirstOrDefault(x => x.Id == (int)OtherEnum.IdSetting && x.Lang == lang);
+                CaiDatHeThong caiDat = context.CaiDatHeThong.FirstOrDefault(x => x.Id == (int)OtherEnum.IdSetting && x.Lang == lang && x.Id == (int)OtherEnum.IdSetting);
                 if (caiDat != null)
                 {
                     return caiDat;

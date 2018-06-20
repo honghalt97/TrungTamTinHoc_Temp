@@ -6,6 +6,12 @@
     @Styles.Render("~/public/css/registerAccount")
 }
 @section scripts{
+    <script>
+        var url = {
+            checkExistAccount: '@Url.RouteUrl("homeCheckExistAccount")',
+            createAccountSuccess: '@Url.RouteUrl("TaoTaiKhoanThanhCong")'
+        }
+    </script>
     @Scripts.Render("~/public/js/registerAccount")
 }
 @using Resources;

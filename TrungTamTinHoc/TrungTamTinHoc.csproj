@@ -218,6 +218,7 @@
   <ItemGroup>
     <Content Include="App_Data\DataDonViHanhChinhVietNam.sql" />
     <Content Include="App_Data\DB20180619.sql" />
+    <Content Include="App_Data\DB20180620.sql" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="ApplicationInsights.config">
@@ -2364,6 +2365,7 @@
     <Content Include="public\assets\montserrat\img\icon\cap-dark.jpg" />
     <Content Include="public\assets\montserrat\img\icon\cap-white.jpg" />
     <Content Include="public\assets\montserrat\img\slider\overlay.png" />
+    <Content Include="public\css\home\registerAccount\register.css" />
     <Content Include="public\img\banner\1.jpg" />
     <Content Include="public\img\banner\2.jpg" />
     <Content Include="public\img\banner\3.jpg" />
@@ -2522,6 +2524,8 @@
     <Content Include="Areas\Home\Views\GuideLine\TermsConditions.cshtml" />
     <Content Include="Areas\Home\Views\GuideLine\PrivacyPolicy.cshtml" />
     <Content Include="Areas\Home\Views\RegisterAccount\Register.cshtml" />
+    <Content Include="Areas\Home\Views\RegisterAccount\DangKyThanhCong.cshtml" />
+    <Content Include="Areas\Home\Views\RegisterAccount\ActiveAccount.cshtml" />
     <None Include="public\js\common\jquery.validate-vsdoc.js" />
     <Content Include="public\js\common\jquery.validate.js" />
     <Content Include="public\js\common\jquery.validate.unobtrusive.js" />
@@ -3824,7 +3828,9 @@
     <Content Include="public\js\admin\dashboard\index.js" />
     <Content Include="public\js\home\login\index.js" />
     <Content Include="public\js\home\login\socialLogin.js" />
+    <Content Include="public\js\home\registerAccount\activeAccount.js" />
     <Content Include="public\js\home\registerAccount\register.js" />
+    <Content Include="public\js\home\registerAccount\registerSuccess.js" />
     <Content Include="public\js\layout-user\home.js" />
     <Content Include="public\js\layout-user\jquery.counterup.js" />
     <Content Include="public\js\layout-user\jquery.meanmenu.js" />

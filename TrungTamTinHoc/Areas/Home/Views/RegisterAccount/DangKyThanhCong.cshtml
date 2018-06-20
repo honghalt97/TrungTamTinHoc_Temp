@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Đăng ký tài khoản thành công";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+@section css{
+    @Styles.Render("~/public/css/register")
+}
+@section scripts{
+    <script>
+        var url = {
+            sendEmail: '@Url.RouteUrl("homeSendEmailById")'
+        }
+    </script>
+    @Scripts.Render("~/public/js/registerSuccess")
+}
+@using Resources;
+<!--Breadcrumb Banner Area Start-->
+<div class="breadcrumb-banner-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-text">
+                    <h1 class="text-center no-line">@UserLang.RegisterSuccess</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Breadcrumb Banner Area-->
+<div class="search-category mb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                @UserLang.RegisterSuccessPart1.
+                <br />
+                <a href="javascript:void(0)" id="btn-send-email" tabindex="1">@UserLang.ResendMail</a>
+                <input type="hidden" id="idAccount" value="@ViewBag.idAccount" />
+            </div>
+        </div>
+    </div>
+</div>

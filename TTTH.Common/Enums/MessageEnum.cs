@@ -26,6 +26,8 @@ namespace TTTH.Common.Enums
             SaiQuaSoLanChoPhep = 32,
             XacThucKhongHopLe = 33,
             TenDangNhapSai = 34,
+            EmailKhongTonTai = 38,
+            DaGuiMailKichHoat = 39,
             ServerError = 100
         }
     }

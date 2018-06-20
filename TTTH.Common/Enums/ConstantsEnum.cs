@@ -26,12 +26,17 @@ namespace TTTH.Common.Enums
             NotValidate = 201
         }
 
+        public enum TemplateEnum
+        {
+            ActiveAccount = 1
+        }
+
         public enum OtherEnum
         {
             TaiKhoanFB = 1,
             TaiKhoanGG = 2,
             IdCauHinh = 1,
-            IdSetting = 1
+            IdSetting = 1,
         }
     }
 }

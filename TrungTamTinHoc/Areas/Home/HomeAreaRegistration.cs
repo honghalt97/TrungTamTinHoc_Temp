@@ -35,6 +35,21 @@ namespace TrungTamTinHoc.Areas.Home
                 new { controller = "RegisterAccount", action = "CreateAccount", id = UrlParameter.Optional }
             );
             context.MapRoute(
+                "homeCheckExistAccount",
+                "home/check-exist-account",
+                new { controller = "RegisterAccount", action = "CheckExistAccount", id = UrlParameter.Optional }
+            );
+            context.MapRoute(
+                "homeSendEmailById",
+                "home/resend-email",
+                new { controller = "RegisterAccount", action = "SendEmailById", id = UrlParameter.Optional }
+            );
+            context.MapRoute(
+                "homeSendEmail",
+                "home/send-email",
+                new { controller = "RegisterAccount", action = "SendEmail", id = UrlParameter.Optional }
+            );
+            context.MapRoute(
                 "homeDefault",
                 "home/{controller}/{action}/{id}",
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional }

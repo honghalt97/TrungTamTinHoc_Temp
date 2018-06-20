@@ -5,6 +5,7 @@
  * Copyright    :   ĐHBKĐN
  * Version      :   1.0.0
  */
+var timeToken = 1;
 var MsgNo = {
     BatBuocNhap : 1,
     SaiMaxlength : 2,
@@ -24,6 +25,8 @@ var MsgNo = {
     XacThucKhongHopLe: 33,
     TenDangNhapSai: 34,
     ChuaDongYVoiDieuKhoan: 35,
+    TenDangNhapDaTonTai: 36,
+    EmailDaTonTai: 37,
     ServerError : 100
 }
 // Format for datepicker
@@ -47,11 +50,11 @@ $(document).ready(function () {
     //        <span class="glyphicon glyphicon-calendar"></span>
     //    </span>
     //</div>
-    //try {
+    try {
         $(".datetimepicker").datetimepicker(date_option).on("dp.show", function () {
             return $(this).data('DateTimePicker').defaultDate(new Date());
         });
-    //}catch(e){}
+    }catch(e){}
     // Gắn monthpicker cho tất cả các input có class là datetimepicker
     //<div class="input-group monthpicker">
     //    <input type="text" class="form-control date" maxlength="8" />

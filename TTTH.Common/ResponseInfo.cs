@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using static TTTH.Common.Enums.ConstantsEnum;
 
-namespace TTTH.Validate
+namespace TTTH.Common
 {
     public class ResponseInfo
     {
