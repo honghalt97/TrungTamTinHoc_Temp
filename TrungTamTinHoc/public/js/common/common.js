@@ -30,9 +30,9 @@ var MsgNo = {
     ServerError : 100
 }
 // Format for datepicker
-var date_option = { format: 'DD/MM/YYYY', minDate: '1900', maxDate: '9999' };
+var date_option = { format: 'DD/MM/YYYY', minDate: '1900', maxDate: '9999', allowInputToggle: true };
 // Format for monthpicker
-var month_option = { format: 'MM/YYYY', minDate: '1900', maxDate: '9999' };
+var month_option = { format: 'MM/YYYY', minDate: '1900', maxDate: '9999', allowInputToggle: true };
 // Convert Date to string width format dd/mm/yyyy
 Date.prototype.ddmmyyyy = function() {
   var mm = this.getMonth() + 1; // getMonth() is zero-based

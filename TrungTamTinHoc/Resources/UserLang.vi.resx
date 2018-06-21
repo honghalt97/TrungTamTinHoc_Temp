@@ -138,6 +138,12 @@
   <data name="AllCourses" xml:space="preserve">
     <value>Tất cả khóa học</value>
   </data>
+  <data name="AlreadyHaveAccount" xml:space="preserve">
+    <value>Bạn đã có tài khoản?</value>
+  </data>
+  <data name="And" xml:space="preserve">
+    <value>và</value>
+  </data>
   <data name="ConfirmPassword" xml:space="preserve">
     <value>Nhập lại mật khẩu</value>
   </data>
@@ -162,14 +168,17 @@
   <data name="FirstName" xml:space="preserve">
     <value>Họ</value>
   </data>
+  <data name="Gender" xml:space="preserve">
+    <value>Giới tính</value>
+  </data>
   <data name="GuideLine" xml:space="preserve">
     <value>Hướng dẫn sử dụng</value>
   </data>
   <data name="HaveAnyQuestion" xml:space="preserve">
     <value>Bạn có thắc mắc, hãy liên hệ?</value>
   </data>
-  <data name="IAgreeWithTermsConditions" xml:space="preserve">
-    <value>Tôi đồng ý với điều khoản sử dụng</value>
+  <data name="IAgreeWith" xml:space="preserve">
+    <value>Tôi đồng ý với</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Ngôn ngữ</value>
@@ -207,6 +216,9 @@
   <data name="MenuHome" xml:space="preserve">
     <value>Trang chủ</value>
   </data>
+  <data name="NotHaveAccount" xml:space="preserve">
+    <value>Bạn chưa có tài khoản?</value>
+  </data>
   <data name="OurTeacher" xml:space="preserve">
     <value>Giáo viên của chúng tôi</value>
   </data>
@@ -218,6 +230,9 @@
   </data>
   <data name="Register" xml:space="preserve">
     <value>Đăng ký</value>
+  </data>
+  <data name="RegisterNow" xml:space="preserve">
+    <value>Đăng ký ngay</value>
   </data>
   <data name="RegisterSuccess" xml:space="preserve">
     <value>Đăng ký thành công</value>

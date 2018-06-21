@@ -138,6 +138,12 @@
   <data name="AllCourses" xml:space="preserve">
     <value>All courses</value>
   </data>
+  <data name="AlreadyHaveAccount" xml:space="preserve">
+    <value>Do you already have an account?</value>
+  </data>
+  <data name="And" xml:space="preserve">
+    <value>and</value>
+  </data>
   <data name="ConfirmPassword" xml:space="preserve">
     <value>Confirm password</value>
   </data>
@@ -162,14 +168,17 @@
   <data name="FirstName" xml:space="preserve">
     <value>First name</value>
   </data>
+  <data name="Gender" xml:space="preserve">
+    <value>Gender</value>
+  </data>
   <data name="GuideLine" xml:space="preserve">
     <value>Guide line</value>
   </data>
   <data name="HaveAnyQuestion" xml:space="preserve">
     <value>Have any question?</value>
   </data>
-  <data name="IAgreeWithTermsConditions" xml:space="preserve">
-    <value>I agree with terms conditions</value>
+  <data name="IAgreeWith" xml:space="preserve">
+    <value>I agree with</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Language</value>
@@ -207,6 +216,9 @@
   <data name="MenuHome" xml:space="preserve">
     <value>Home</value>
   </data>
+  <data name="NotHaveAccount" xml:space="preserve">
+    <value>Do not have an account?</value>
+  </data>
   <data name="OurTeacher" xml:space="preserve">
     <value>Our teacher</value>
   </data>
@@ -218,6 +230,9 @@
   </data>
   <data name="Register" xml:space="preserve">
     <value>Register</value>
+  </data>
+  <data name="RegisterNow" xml:space="preserve">
+    <value>Register now</value>
   </data>
   <data name="RegisterSuccess" xml:space="preserve">
     <value>Register Success</value>

@@ -32,70 +32,83 @@
 <div class="search-category mb-70">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-md-offset-3">
+            <div class="col-md-10 col-md-offset-1">
                 <form id="form-register" action="@Url.RouteUrl("homeCreateAccount")" method="post">
                     <div class="form-container">
                         <div class="box-select">
                             <div class="row">
-                                <div class="col-sm-12">
-                                    <input type="text" name="Username" id="Username" class="required alphanumeric" maxlength="50" tabindex="1" placeholder="@UserLang.Username" />
+                                <div class="col-sm-6">
+                                    <label for="Username" class="white-label">@UserLang.Username <span class="text-required">*</span></label>
+                                    <input type="text" name="Username" id="Username" class="required alphanumeric mb-5" maxlength="50" tabindex="1" />
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="Username" class="white-label">@UserLang.FirstName <span class="text-required">*</span></label>
+                                    <input type="text" name="Ho" id="Ho" class="required mb-5" maxlength="50" tabindex="2" />
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-sm-12">
-                                    <input type="text" name="Ho" id="Ho" class="required" maxlength="50" tabindex="2" placeholder="@UserLang.FirstName" />
+                                <div class="col-sm-6">
+                                    <label for="Username" class="white-label">@UserLang.LastName <span class="text-required">*</span></label>
+                                    <input type="text" name="Ten" id="Ten" class="required mb-5" maxlength="50" tabindex="3" />
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <input type="text" name="Ten" id="Ten" class="required" maxlength="50" tabindex="3" placeholder="@UserLang.LastName" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <select name="GioiTinh" id="GioiTinh" tabindex="4">
+                                <div class="col-sm-6">
+                                    <label for="Username" class="white-label">@UserLang.Gender</label>
+                                    <select name="GioiTinh" id="GioiTinh" class="mb-5" tabindex="4">
                                         <option value="true">@UserLang.Male</option>
                                         <option value="false">@UserLang.Female</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="input-group datetimepicker">
-                                        <input type="tel" class="date required" id="NgaySinh" name="NgaySinh" maxlength="8" tabindex="5" placeholder="@UserLang.DateOfBirth"/>
+                                <div class="col-sm-6">
+                                    <label for="Username" class="white-label">@UserLang.DateOfBirth <span class="text-required">*</span></label>
+                                    <div class="input-group datetimepicker mb-5">
+                                        <input type="tel" class="date required" id="NgaySinh" name="NgaySinh" maxlength="8" tabindex="5" />
                                         <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-calendar"></span>
                                         </span>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <input type="email" name="Email" id="Email" class="required email" maxlength="255" tabindex="6" placeholder="Email" />
+                                <div class="col-sm-6">
+                                    <label for="Username" class="white-label">Email <span class="text-required">*</span></label>
+                                    <input type="email" name="Email" id="Email" class="required email mb-5" maxlength="255" tabindex="6" />
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-sm-12">
-                                    <input type="password" name="Password" id="Password" class="required" maxlength="50" tabindex="7" placeholder="@UserLang.Password" />
+                                <div class="col-sm-6">
+                                    <label for="Username" class="white-label">@UserLang.Password <span class="text-required">*</span></label>
+                                    <input type="password" name="Password" id="Password" class="required" maxlength="50" tabindex="7" />
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <input type="password" name="ConfirmPassword" id="ConfirmPassword" class="required" maxlength="50" tabindex="8" placeholder="@UserLang.ConfirmPassword" />
+                                <div class="col-sm-6">
+                                    <label for="Username" class="white-label">@UserLang.ConfirmPassword <span class="text-required">*</span></label>
+                                    <input type="password" name="ConfirmPassword" id="ConfirmPassword" class="required" maxlength="50" tabindex="8" />
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-sm-12">
                                     <label class="custom-check">
-                                        <span class="text-login"><a href="@Url.RouteUrl("TermsConditions")" target="_blank">@UserLang.IAgreeWithTermsConditions</a></span>
+                                        <span class="text-login">
+                                            @UserLang.IAgreeWith
+                                            <a href="@Url.RouteUrl("TermsConditions")" target="_blank">@UserLang.TermsConditions</a>
+                                            @UserLang.And
+                                            <a href="@Url.RouteUrl("PrivacyPolicy")" target="_blank">@UserLang.PrivacyPolicy</a>
+                                        </span>
                                         <input type="checkbox" id="Agree" value="1" tabindex="9">
                                         <span class="checkmark"><span class="check"></span></span>
                                     </label>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-sm-12">
+                                <div class="col-sm-6 col-sm-offset-3">
                                     <button type="button" id="btn-regist" tabindex="5">@UserLang.Register</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 col-sm-offset-3">
+                                    <span class="text-login">
+                                        @UserLang.AlreadyHaveAccount
+                                        <a href="@Url.RouteUrl("UserLogin")">@UserLang.Login</a>
+                                    </span>
                                 </div>
                             </div>
                         </div>

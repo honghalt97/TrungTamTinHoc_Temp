@@ -1408,7 +1408,6 @@ body {
     font-family: "Arial";
     font-size: 12px;
     margin: -60px 0 0;
-    overflow: hidden;
     padding: 38px 64px;
     position: relative;
     z-index: 3;
@@ -2247,3 +2246,14 @@ span.c-text {display: inline-block;}
     .you-will-get .comment-text > p{
         min-height: 65px;
     }
+    .white-label{
+        color: #fff;
+        font-size: 15px;
+        font-weight: 100;
+    }
+        .white-label .text-required {
+            color: red;
+        }
+        .mb-5{
+            margin-bottom: 5px !important;
+        }

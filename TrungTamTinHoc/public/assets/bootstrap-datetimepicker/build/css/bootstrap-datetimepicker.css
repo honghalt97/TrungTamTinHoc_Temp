@@ -33,6 +33,7 @@
   content: '';
   display: inline-block;
   position: absolute;
+  z-index: 10;
 }
 .bootstrap-datetimepicker-widget.dropdown-menu.bottom:before {
   border-left: 7px solid transparent;

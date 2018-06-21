@@ -124,6 +124,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you already have an account?.
+        /// </summary>
+        public static string AlreadyHaveAccount {
+            get {
+                return ResourceManager.GetString("AlreadyHaveAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to and.
+        /// </summary>
+        public static string And {
+            get {
+                return ResourceManager.GetString("And", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Confirm password.
         /// </summary>
         public static string ConfirmPassword {
@@ -196,6 +214,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Gender.
+        /// </summary>
+        public static string Gender {
+            get {
+                return ResourceManager.GetString("Gender", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Guide line.
         /// </summary>
         public static string GuideLine {
@@ -214,11 +241,11 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to I agree with terms conditions.
+        ///   Looks up a localized string similar to I agree with.
         /// </summary>
-        public static string IAgreeWithTermsConditions {
+        public static string IAgreeWith {
             get {
-                return ResourceManager.GetString("IAgreeWithTermsConditions", resourceCulture);
+                return ResourceManager.GetString("IAgreeWith", resourceCulture);
             }
         }
         
@@ -331,6 +358,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do not have an account?.
+        /// </summary>
+        public static string NotHaveAccount {
+            get {
+                return ResourceManager.GetString("NotHaveAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Our teacher.
         /// </summary>
         public static string OurTeacher {
@@ -363,6 +399,15 @@ namespace Resources {
         public static string Register {
             get {
                 return ResourceManager.GetString("Register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register now.
+        /// </summary>
+        public static string RegisterNow {
+            get {
+                return ResourceManager.GetString("RegisterNow", resourceCulture);
             }
         }
         
