@@ -15,6 +15,7 @@ namespace TTTH.DataBase.Schema
             DanhGiaKhoaHoc = new HashSet<DanhGiaKhoaHoc>();
             KhoaHocTrans = new HashSet<KhoaHocTrans>();
             LopHoc = new HashSet<LopHoc>();
+            DangKyTemps = new HashSet<DangKyTemp>();
         }
         
         [Required]
@@ -38,6 +39,28 @@ namespace TTTH.DataBase.Schema
 
         public bool HienThi { set; get; }
 
+        [Required]
+        [StringLength(100)]
+        public string DoTuoi { set; get; }
+
+        [Required]
+        [StringLength(100)]
+        public string ThoiGian { set; get; }
+
+        [Column(TypeName = "date")]
+        public DateTime? ThoiGianKetThuc { set; get; }
+
+        [Required]
+        [StringLength(100)]
+        public string LichHoc { set; get; }
+
+        [Required]
+        [Column(TypeName = "money")]
+        public decimal HocPhi { set; get; }
+
+        [StringLength(200)]
+        public string GhiChu { set; get; }
+
         public virtual ICollection<CommentKhoaHoc> CommentKhoaHoc { get; set; }
 
         public virtual ChuyenNganh ChuyenNganh { get; set; }
@@ -47,5 +70,7 @@ namespace TTTH.DataBase.Schema
         public virtual ICollection<KhoaHocTrans> KhoaHocTrans { get; set; }
         
         public virtual ICollection<LopHoc> LopHoc { get; set; }
+
+        public virtual ICollection<DangKyTemp> DangKyTemps { get; set; }
     }
 }

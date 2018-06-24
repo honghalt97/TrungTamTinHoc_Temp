@@ -1760,8 +1760,11 @@ Switchery.prototype.setSize = function() {
     case 'large':
       classes(this.switcher).add(large)
       break;
+    case 'normal':
+          classes(this.switcher).add(normal)
+          break;
     default:
-      classes(this.switcher).add(normal)
+        classes(this.switcher).add(small)
       break;
   }
 };

@@ -15,6 +15,7 @@ namespace TTTH.DataBase
         public virtual DbSet<AuditEntry> Audit { set; get; }
         public virtual DbSet<AuditEntryProperty> AuditProperty { set; get; }
         public virtual DbSet<Account> Account { get; set; }
+        public virtual DbSet<Album> Album { get; set; }
         public virtual DbSet<BienLaiThuTien> BienLaiThuTien { get; set; }
         public virtual DbSet<BienLaiXuatTien> BienLaiXuatTien { get; set; }
         public virtual DbSet<BieuMau> BieuMau { get; set; }
@@ -30,6 +31,7 @@ namespace TTTH.DataBase
         public virtual DbSet<ChuyenNganhTrans> ChuyenNganhTrans { get; set; }
         public virtual DbSet<DangKyDayBu> DangKyDayBu { get; set; }
         public virtual DbSet<DangKyLopHoc> DangKyLopHoc { get; set; }
+        public virtual DbSet<DangKyTemp> DangKyTemp { get; set; }
         public virtual DbSet<DangKyTheoDoi> DangKyTheoDoi { get; set; }
         public virtual DbSet<DanhGiaKhoaHoc> DanhGiaKhoaHoc { get; set; }
         public virtual DbSet<DanhGiaTinTuc> DanhGiaTinTuc { get; set; }
@@ -80,7 +82,7 @@ namespace TTTH.DataBase
         public DataContext()
            //@"Data Source=103.95.197.121;Initial Catalog=TrungTamTinHoc_DEV;User Id=sa;Password=Admin@123;MultipleActiveResultSets=True;"
            //@"Data Source=NGOCQUY\SQLEXPRESS;Initial Catalog=TrungTamTinHoc_DEV;Integrated Security=True;"
-           : base(@"Data Source=NGOCQUY\SQLEXPRESS;Initial Catalog=TrungTamTinHoc_DEV;Integrated Security=True;")
+           : base(@"Data Source=DESKTOP-L1RDH7B;Initial Catalog=TrungTamTinHoc_Temp;Integrated Security=True;")
         {
             Database.SetInitializer<DataContext>(new TaoDataBase());
         }
@@ -260,6 +262,12 @@ namespace TTTH.DataBase
 
             modelBuilder.Entity<KhoaHoc>()
                 .HasMany(e => e.CommentKhoaHoc)
+                .WithRequired(e => e.KhoaHoc)
+                .HasForeignKey(e => e.IdKhoaHoc)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<KhoaHoc>()
+                .HasMany(e => e.DangKyTemps)
                 .WithRequired(e => e.KhoaHoc)
                 .HasForeignKey(e => e.IdKhoaHoc)
                 .WillCascadeOnDelete(false);

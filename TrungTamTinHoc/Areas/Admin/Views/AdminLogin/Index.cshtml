@@ -1,8 +1,52 @@
-﻿
-@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
-}
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TTTH::Admin - Login</title>
+    @Styles.Render("~/public/css/adminCommon")
+</head>
+<body class="login">
+    <div>
+        <a class="hiddenanchor" id="signup"></a>
+        <a class="hiddenanchor" id="signin"></a>
 
-<h2>Login</h2>
+        <div class="login_wrapper">
+            <div class="animate form login_form">
+                <section class="login_content">
+                    <form action="/admin/AdminLogin/CheckLogin" id="form-login">
+                        <h1>Admin Login</h1>
+                        <div>
+                            <input type="text" class="form-control required" placeholder="Username" id="Username" name="Username" maxlength="50" tabindex="1" />
+                        </div>
+                        <div>
+                            <input type="password" class="form-control required" placeholder="Password" id="Password" name="Password" maxlength="50" tabindex="2" />
+                        </div>
+                        <div>
+                            <a class="btn btn-default submit" id="btn-login" href="javascript:void(0)">Log in</a>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="separator">
+                            <div class="clearfix"></div>
+                            <br />
+
+                            <div>
+                                <h1><i class="fa fa-paw"></i> Trung Tâm Tin Học Ipro</h1>
+                                <p>©2018 All Rights Reserved. Privacy and Terms</p>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+    @Scripts.Render("~/public/js/adminCommon")
+    @Scripts.Render("~/public/js/adminLogin")
+</body>
+</html>
+
 

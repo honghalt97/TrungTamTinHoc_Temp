@@ -93,6 +93,7 @@
     <Compile Include="DataContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Schema\Account.cs" />
+    <Compile Include="Schema\Album.cs" />
     <Compile Include="Schema\BienLaiThuTien.cs" />
     <Compile Include="Schema\BienLaiXuatTien.cs" />
     <Compile Include="Schema\BieuMau.cs" />
@@ -107,6 +108,7 @@
     <Compile Include="Schema\Contact.cs" />
     <Compile Include="Schema\DangKyDayBu.cs" />
     <Compile Include="Schema\DangKyLopHoc.cs" />
+    <Compile Include="Schema\DangKyTemp.cs" />
     <Compile Include="Schema\DangKyTheoDoi.cs" />
     <Compile Include="Schema\DanhGiaKhoaHoc.cs" />
     <Compile Include="Schema\DanhGiaTinTuc.cs" />

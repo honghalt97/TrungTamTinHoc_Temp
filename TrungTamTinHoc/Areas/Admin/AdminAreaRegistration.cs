@@ -20,6 +20,11 @@ namespace TrungTamTinHoc.Areas.Admin
                 new { controller = "AdminLogin", action = "Index"}
             );
             context.MapRoute(
+                "adminLogout",
+                "admin/logout",
+                new { controller = "AdminLogin", action = "Logout" }
+            );
+            context.MapRoute(
                 "adminCheckLogin",
                 "admin/check-login",
                 new { controller = "AdminLogin", action = "CheckLogin"}

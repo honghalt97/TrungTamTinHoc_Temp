@@ -21,5 +21,9 @@ namespace TrungTamTinHoc.Areas.Home.Models.Schema
         public string WhyUs { set; get; }
         public CacKhoaHoc CacKhoaHoc { set; get; }
         public List<GiangVien> DanhSachGiangVien { set; get; }
+        public CacBaiViet CacBaiViet { set; get; }
+
+
+
     }
 }

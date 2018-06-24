@@ -1,0 +1,137 @@
+﻿@model KhoaHoc
+@{
+    KhoaHoc khoaHoc = Model;
+    ViewBag.Title = (khoaHoc == null ? "Thêm khóa học" : "Chỉnh sửa khóa học");
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@section css{
+    @Styles.Render("~/public/css/khoaHoc")
+}
+@section scripts{
+    @Scripts.Render("~/public/js/khoaHoc")
+}
+@using TTTH.DataBase.Schema
+<div class="row">
+    <div class="col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>@(khoaHoc == null ? "Thêm khóa học" : "Chỉnh sửa khóa học")</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content" id="div-classes-of-course">
+                <form action="/admin/QuanLyKhoaHoc/XuLyKhoaHoc" method="post" id="form-khoa-hoc">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="course">Tên khóa học</label>
+                                <input type="hidden" name="Id" id="Id" value="@(khoaHoc == null ? "" : khoaHoc.Id.ToString())"/>
+                                <input type="hidden" id="mode" value="@(khoaHoc == null ? "I" : "U")" />
+                                <input class="form-control required" name="TenKhoaHoc" id="TenKhoaHoc" value="@(khoaHoc == null ? "" : khoaHoc.KhoaHocTrans.ToList()[0].TenKhoaHoc)" tabindex="1" maxlength="50" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="course">Link SEO</label>
+                                <input class="form-control required" name="BeautyId" id="BeautyId" value="@(khoaHoc == null ? "" : khoaHoc.BeautyId )" tabindex="2" maxlength="255" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="course">Tóm tắt</label>
+                                <textarea class="form-control required" name="TomTat" id="TomTat" tabindex="3" maxlength="500"> @(khoaHoc == null ? "" : khoaHoc.KhoaHocTrans.ToList()[0].TomTat )</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="course">Độ tuổi</label>
+                                <input class="form-control required" name="DoTuoi" id="DoTuoi" value="@(khoaHoc == null ? "" : khoaHoc.DoTuoi )" tabindex="4" maxlength="100" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="course">Thời gian</label>
+                                <input class="form-control required" name="ThoiGian" id="ThoiGian" value="@(khoaHoc == null ? "" : khoaHoc.ThoiGian )" tabindex="4" maxlength="100" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="course">Ngày khai giảng</label>
+                                <div class="input-group datetimepicker">
+                                    <input type="tel" class="form-control date required" id="NgayKhaiGiang" name="NgayKhaiGiang" maxlength="8" tabindex="5" value="@(khoaHoc == null || khoaHoc.NgayKhaiGiang == null ? "" : khoaHoc.NgayKhaiGiang.Value.ToString("dd/MM/yyyy") )" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="course">Ngày kết thúc</label>
+                                <div class="input-group datetimepicker">
+                                    <input type="tel" class="form-control date required" id="ThoiGianKetThuc" name="ThoiGianKetThuc" maxlength="8" tabindex="6" value="@(khoaHoc == null || khoaHoc.ThoiGianKetThuc == null ? "" : khoaHoc.ThoiGianKetThuc.Value.ToString("dd/MM/yyyy") )" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="course">Lịch học</label>
+                                <input class="form-control required" name="LichHoc" id="LichHoc" value="@(khoaHoc == null ? "" : khoaHoc.LichHoc )" tabindex="7" maxlength="100" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="course">Học phí</label>
+                                <input class="form-control required money" name="HocPhi" id="HocPhi" value="@(khoaHoc == null ? "" : khoaHoc.HocPhi.ToString() )" tabindex="8" maxlength="13" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="course">Chi Tiết</label>
+                                <textarea class="form-control ckeditor-custom ChiTiet" name="ChiTiet" id="ChiTiet" tabindex="9">@(khoaHoc == null ? "" : khoaHoc.KhoaHocTrans.ToList()[0].ChiTiet )</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="course">Ảnh minh họa (600 x 422 pixels)</label><br />
+                                <input class="form-control required" name="AnhMinhHoa" id="AnhMinhHoa" value="@(khoaHoc == null ? "" : khoaHoc.AnhMinhHoa )" tabindex="10" maxlength="255" />
+                                <img src="@(khoaHoc == null ? "" : khoaHoc.AnhMinhHoa )" id="view-img" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="course">Ghi Chú</label>
+                                <input class="form-control" name="GhiChu" id="GhiChu" value="@(khoaHoc == null ? "" : khoaHoc.GhiChu )" tabindex="12" maxlength="200" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <button type="button" class="btn btn-primary" id="btn-save" tabindex="18">Lưu</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

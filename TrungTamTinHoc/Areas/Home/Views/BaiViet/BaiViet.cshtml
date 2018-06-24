@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "BaiViet";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+@model CacBaiViet
+@{
+    CacBaiViet danhSachBaiViet = new CacBaiViet();
+    if (Model != null)
+    {
+        danhSachBaiViet = Model;
+    }
+    List<TinTuc> cacBaiViet = danhSachBaiViet.DanhSachBaiViet;
+}
+@using TrungTamTinHoc.Areas.Home.Models.Schema
+@using Resources;
+<!--Breadcrumb Banner Area Start-->
+<div class="breadcrumb-banner-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-text">
+                    <h1 class="text-center">@UserLang.MenuPosts</h1>
+                    <div class="breadcrumb-bar">
+                        <ul class="breadcrumb">
+                            <li><a href="@Url.RouteUrl("Home")">@UserLang.MenuHome</a></li>
+                            <li>@UserLang.MenuPosts</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Breadcrumb Banner Area-->
+<!--Latest News Area Start-->
+<div class="latest-area section-padding latest-page">
+    <div class="container">
+        <div class="row">
+            @for (int i = 0; i < cacBaiViet.Count; i++)
+            {
+                string hidden = "";
+                if (i == cacBaiViet.Count - 1)
+                {
+                    hidden = "hidden-sm";
+                }
+                <div class="col-md-6  @hidden">
+                <div class="single-latest-item">
+                    <div class="single-latest-image">
+                        <a href="#"><img src="@cacBaiViet[i].AnhMinhHoa" alt="@cacBaiViet[i].TieuDe"></a>
+                    </div>
+                    <div class="single-latest-text">
+                        <h3><a href="#">@cacBaiViet[i].TieuDe</a></h3>
+                        <div class="single-item-comment-view">
+                            <span><i class="zmdi zmdi-eye"></i>@cacBaiViet[i].SoLuongView</span>
+                            <span><i class="zmdi zmdi-comments"></i>@cacBaiViet[i].SoLuongComment</span>
+                        </div>
+                        <p>@(cacBaiViet[i].TomTat.Length > 170 ? cacBaiViet[i].TomTat.Substring(0, 170) + "..." : cacBaiViet[i].TomTat)</p>
+                        <a href="#" class="button-default">@UserLang.LearnNow</a>
+                    </div>
+                </div>
+            </div>
+            }
+                
+        </div>
+    </div>
+</div>
+<!--End of Latest News Area-->
+

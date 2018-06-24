@@ -84,6 +84,13 @@ namespace TrungTamTinHoc
             ).DataTokens.Add("area", "home");
 
             routes.MapRoute(
+                name: "BaiViet",
+                url: "danh-sach-bai-viet/{id}",
+                defaults: new { controller = "BaiViet", action = "ChiTietBaiViet", id = UrlParameter.Optional },
+                namespaces: new string[] { "MvcNangCao.Areas.Home.Controllers" }
+            ).DataTokens.Add("area", "home");
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

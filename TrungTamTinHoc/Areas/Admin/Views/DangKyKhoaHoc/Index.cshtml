@@ -1,0 +1,96 @@
+﻿@model IEnumerable<DangKyTemp>
+@{
+    ViewBag.Title = "Danh sách đăng ký";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    List<DangKyTemp> dangKyTemp = Model.ToList();
+    List<TrangThaiKhoaHoc> trangThais = new List<TrangThaiKhoaHoc>();
+    trangThais.Add(new TrangThaiKhoaHoc
+    {
+        Id = 1,
+        Name = "Đăng ký mới"
+    });
+    trangThais.Add(new TrangThaiKhoaHoc
+    {
+        Id = 2,
+        Name = "Đã xem"
+    });
+    trangThais.Add(new TrangThaiKhoaHoc
+    {
+        Id = 3,
+        Name = "Đã liên lạc"
+    });
+    trangThais.Add(new TrangThaiKhoaHoc
+    {
+        Id = 4,
+        Name = "Hoàn thành"
+    });
+}
+@section css{
+    @Styles.Render("~/public/css/danhSachDangKy")
+}
+@section scripts{
+    @Scripts.Render("~/public/js/danhSachDangKy")
+}
+@using TTTH.DataBase.Schema
+@using TrungTamTinHoc.Areas.Admin.Models.Schema
+<div class="row">
+    <div class="col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Danh sách đăng ký</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content" id="div-classes-of-course">
+                <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive middle has-control" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>Khóa học</th>
+                            <th>Họ tên</th>
+                            <th>Ngày sinh</th>
+                            <th>Họ tên bố mẹ</th>
+                            <th>Nghề nhiệp</th>
+                            <th>Số điện thoại</th>
+                            <th>Email</th>
+                            <th>Địa chỉ</th>
+                            <th>Ghi chú</th>
+                            <th>Trạng thái</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < dangKyTemp.Count; i++)
+                        {
+                            <tr>
+                                <td><a href="/khoa-hoc/@dangKyTemp[i].KhoaHoc.BeautyId" target="_blank">@dangKyTemp[i].KhoaHoc.KhoaHocTrans.ToList()[0].TenKhoaHoc</a></td>
+                                <td>@dangKyTemp[i].HoTenBe</td>
+                                <td>@dangKyTemp[i].NgaySinh.ToString("dd/MM/yyyy")</td>
+                                <td>@dangKyTemp[i].HoTenBan</td>
+                                <td>@dangKyTemp[i].NgheNghiep</td>
+                                <td>@dangKyTemp[i].DienThoai</td>
+                                <td>@dangKyTemp[i].Email</td>
+                                <td>@dangKyTemp[i].DiaChi</td>
+                                <td>
+                                    <textarea class="form-control ghi-chu" tabindex="3" id-dang-ky="@dangKyTemp[i].Id" maxlength="200" rows="2">@dangKyTemp[i].GhiChu</textarea>
+                                </td>
+                                <td class="text-center">
+                                    <select class="form-control trang-thai" id-dang-ky="@dangKyTemp[i].Id" tabindex="4">
+                                        @foreach(TrangThaiKhoaHoc trangThai in trangThais)
+                                        {
+                                            <option value="@trangThai.Id" @if (trangThai.Id == dangKyTemp[i].TrangThai) { @Html.Raw("selected=selected") }>@trangThai.Name</option>
+                                        }
+                                    </select>
+                                </td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-xs btn-danger btn-del" style="margin: 0px;" tabindex="5" id-dang-ky="@dangKyTemp[i].Id">
+                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

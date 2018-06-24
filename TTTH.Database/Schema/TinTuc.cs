@@ -25,6 +25,8 @@ namespace TTTH.DataBase.Schema
         [Required]
         [StringLength(255)]
         public string AnhMinhHoa { get; set; }
+
+        public bool HienThi { set; get; }
         
         public virtual ICollection<CommentTinTuc> CommentTinTuc { get; set; }
         

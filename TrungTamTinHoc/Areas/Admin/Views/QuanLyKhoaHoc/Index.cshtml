@@ -1,0 +1,67 @@
+﻿@model IEnumerable<KhoaHoc>
+@{
+    ViewBag.Title = "Danh sách khóa học";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    List<KhoaHoc> khoaHocs = Model.ToList();
+}
+@section css{
+    @Styles.Render("~/public/css/danhSachKhoaHoc")
+}
+@section scripts{
+    @Scripts.Render("~/public/js/danhSachKhoaHoc")
+}
+@using TTTH.DataBase.Schema
+<div class="row">
+    <div class="col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Danh sách khóa học</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content" id="div-classes-of-course">
+                <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive middle has-control" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Tên khóa học</th>
+                            <th>Độ tuổi</th>
+                            <th>Thời gian</th>
+                            <th>Lịch học</th>
+                            <th>Học phí</th>
+                            <th>Khai giảng</th>
+                            <th>Hiển thị</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < khoaHocs.Count; i++)
+                        {
+                        <tr>
+                            <td class="text-center">
+                                <a href="/admin/QuanLyKhoaHoc/KhoaHoc?id=@khoaHocs[i].Id" tabindex="5">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </a>
+                            </td>
+                            <td><a href="/khoa-hoc/@khoaHocs[i].BeautyId" target="_blank">@khoaHocs[i].KhoaHocTrans.ToList()[0].TenKhoaHoc</a></td>
+                            <td>@khoaHocs[i].DoTuoi</td>
+                            <td>@khoaHocs[i].ThoiGian</td>
+                            <td>@khoaHocs[i].LichHoc</td>
+                            <td class="text-money">@khoaHocs[i].HocPhi.ToString("0")</td>
+                            <td>@khoaHocs[i].NgayKhaiGiang.Value.ToString("dd/MM/yyyy")</td>
+                            <td class="text-center">
+                                <input type="checkbox" class="js-switch show-khoa-hoc" id-khoa-hoc="@khoaHocs[i].Id" old-val="@khoaHocs[i].HienThi" update="1" @if (khoaHocs[i].HienThi){ @Html.Raw("checked=checked")} tabindex="5" val="1"/>
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="btn btn-xs btn-danger btn-del" style="margin: 0px;" tabindex="5" id-khoa-hoc="@khoaHocs[i].Id">
+                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

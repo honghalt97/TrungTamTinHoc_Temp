@@ -1,0 +1,58 @@
+﻿@model IEnumerable<TinTuc>
+@{
+    ViewBag.Title = "danh sách tin tức";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    List<TinTuc> tinTucs = Model.ToList();
+}
+@section css{
+    @Styles.Render("~/public/css/danhSachTinTuc")
+}
+@section scripts{
+    @Scripts.Render("~/public/js/danhSachTinTuc")
+}
+@using TTTH.DataBase.Schema
+<div class="row">
+    <div class="col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Danh sách tin tức</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content" id="div-classes-of-course">
+                <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive middle has-control" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Tiêu đề</th>
+                            <th>Tóm tắt</th>
+                            <th>Hiển thị</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < tinTucs.Count; i++)
+                        {
+                            <tr>
+                                <td class="text-center">
+                                    <a href="/admin/QuanLyTinTuc/TinTuc?id=@tinTucs[i].Id" tabindex="5">
+                                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                                    </a>
+                                </td>
+                                <td><a href="/bai-viet/@tinTucs[i].BeautyId" target="_blank">@tinTucs[i].TinTucTrans.ToList()[0].TieuDe</a></td>
+                                <td>@tinTucs[i].TinTucTrans.ToList()[0].TomTat</td>
+                                <td class="text-center">
+                                    <input type="checkbox" class="js-switch show-tin-tuc" id-tin-tuc="@tinTucs[i].Id" old-val="@tinTucs[i].HienThi" update="1" @if (tinTucs[i].HienThi) { @Html.Raw("checked=checked") } tabindex="5" val="1" />
+                                </td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-xs btn-danger btn-del" style="margin: 0px;" tabindex="5" id-tin-tuc="@tinTucs[i].Id">
+                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

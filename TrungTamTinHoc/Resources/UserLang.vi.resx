@@ -189,6 +189,9 @@
   <data name="LearnMore" xml:space="preserve">
     <value>Tìm hiểu thêm</value>
   </data>
+  <data name="LearnNow" xml:space="preserve">
+    <value>Nội dung</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>Đăng nhập</value>
   </data>
@@ -215,6 +218,9 @@
   </data>
   <data name="MenuHome" xml:space="preserve">
     <value>Trang chủ</value>
+  </data>
+  <data name="MenuPosts" xml:space="preserve">
+    <value>Bài viết</value>
   </data>
   <data name="NotHaveAccount" xml:space="preserve">
     <value>Bạn chưa có tài khoản?</value>

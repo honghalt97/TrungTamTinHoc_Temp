@@ -277,6 +277,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Learn Now.
+        /// </summary>
+        public static string LearnNow {
+            get {
+                return ResourceManager.GetString("LearnNow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Login.
         /// </summary>
         public static string Login {
@@ -354,6 +363,15 @@ namespace Resources {
         public static string MenuHome {
             get {
                 return ResourceManager.GetString("MenuHome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Posts.
+        /// </summary>
+        public static string MenuPosts {
+            get {
+                return ResourceManager.GetString("MenuPosts", resourceCulture);
             }
         }
         

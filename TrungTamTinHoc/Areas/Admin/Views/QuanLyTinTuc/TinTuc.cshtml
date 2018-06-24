@@ -1,0 +1,77 @@
+﻿@model TinTuc
+@{
+    TinTuc tinTuc = Model;
+    ViewBag.Title = (tinTuc == null ? "Thêm tin tức" : "Chỉnh sửa tin tức");
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@section css{
+    @Styles.Render("~/public/css/tinTuc")
+}
+@section scripts{
+    @Scripts.Render("~/public/js/tinTuc")
+}
+@using TTTH.DataBase.Schema
+<div class="row">
+    <div class="col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>@(tinTuc == null ? "Thêm tin tức" : "Chỉnh sửa tin tức")</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content" id="div-classes-of-course">
+                <form action="/admin/QuanLyTinTuc/XuLyTinTuc" method="post" id="form-tin-tuc">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="course">Tiêu đề</label>
+                                <input type="hidden" name="Id" id="Id" value="@(tinTuc == null ? "" : tinTuc.Id.ToString())" />
+                                <input type="hidden" id="mode" value="@(tinTuc == null ? "I" : "U")" />
+                                <input class="form-control required" name="TieuDe" id="TieuDe" value="@(tinTuc == null ? "" : tinTuc.TinTucTrans.ToList()[0].TieuDe)" tabindex="1" maxlength="100" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="course">Link SEO</label>
+                                <input class="form-control required" name="BeautyId" id="BeautyId" value="@(tinTuc == null ? "" : tinTuc.BeautyId )" tabindex="2" maxlength="255" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="course">Tóm tắt</label>
+                                <textarea class="form-control required" name="TomTat" id="TomTat" tabindex="3" maxlength="200"> @(tinTuc == null ? "" : tinTuc.TinTucTrans.ToList()[0].TomTat )</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="course">Nội dung</label>
+                                <textarea class="form-control ckeditor-custom NoiDung" name="NoiDung" id="NoiDung" tabindex="4">@(tinTuc == null ? "" : tinTuc.TinTucTrans.ToList()[0].NoiDung )</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="course">Ảnh minh họa</label><br />
+                                <input class="form-control required" name="AnhMinhHoa" id="AnhMinhHoa" value="@(tinTuc == null ? "" : tinTuc.AnhMinhHoa )" tabindex="5" maxlength="255" />
+                                <img src="@(tinTuc == null ? "" : tinTuc.AnhMinhHoa )" id="view-img" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <button type="button" class="btn btn-primary" id="btn-save" tabindex="6">Lưu</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

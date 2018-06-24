@@ -189,6 +189,9 @@
   <data name="LearnMore" xml:space="preserve">
     <value>Learn more</value>
   </data>
+  <data name="LearnNow" xml:space="preserve">
+    <value>Learn Now</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>Login</value>
   </data>
@@ -215,6 +218,9 @@
   </data>
   <data name="MenuHome" xml:space="preserve">
     <value>Home</value>
+  </data>
+  <data name="MenuPosts" xml:space="preserve">
+    <value>Posts</value>
   </data>
   <data name="NotHaveAccount" xml:space="preserve">
     <value>Do not have an account?</value>

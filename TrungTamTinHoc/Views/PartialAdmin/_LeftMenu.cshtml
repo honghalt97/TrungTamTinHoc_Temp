@@ -1,7 +1,8 @@
-﻿<div class="col-md-3 left_col">
+﻿@using TTTH.Common
+<div class="col-md-3 left_col">
     <div class="left_col scroll-view">
         <div class="navbar nav_title" style="border: 0;">
-            <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+            <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Ipro!</span></a>
         </div>
 
         <div class="clearfix"></div>
@@ -13,7 +14,7 @@
             </div>
             <div class="profile_info">
                 <span>Welcome,</span>
-                <h2>John Doe</h2>
+                <h2>Admin</h2>
             </div>
         </div>
         <!-- /menu profile quick info -->
@@ -23,15 +24,32 @@
         <!-- sidebar menu -->
         <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
             <div class="menu_section active">
-                <h3>General</h3>
                 <ul class="nav side-menu" style="">
-                    <li class="active">
-                        <a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
-                        <ul class="nav child_menu" style="display: block;">
-                            <li class="current-page"><a href="index.html">Dashboard</a></li>
-                            <li><a href="index2.html">Dashboard2</a></li>
-                            <li><a href="index3.html">Dashboard3</a></li>
+                    <li>
+                        <a href="/admin/dashboard"><i class="fa fa-tachometer"></i> Dashdoard </a>
+                    </li>
+                    <li>
+                        <a><i class="fa fa-leanpub"></i> Khóa học <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="/admin/QuanLyKhoaHoc/Index">Danh sách khóa học</a></li>
+                            <li><a href="/admin/QuanLyKhoaHoc/KhoaHoc">Thêm khóa học</a></li>
                         </ul>
+                    </li>
+                    <li>
+                        <a><i class="fa fa-file-text"></i> Tin Tức <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="/admin/QuanLyTinTuc/Index">Danh sách tin tức</a></li>
+                            <li><a href="/admin/QuanLyTinTuc/TinTuc">Thêm tin tức</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        @{ 
+                            int soLuong = Common.SoLuongDangKy();
+                        }
+                        <a href="/admin/DangKyKhoaHoc/Index"><i class="fa fa-graduation-cap"></i> Danh sách đăng ký @if(soLuong > 0){ <span class="badge bg-red">@soLuong</span>}</a>
+                    </li>
+                    <li>
+                        <a href="/admin/Alum/Index"><i class="fa fa-book"></i> Album</a>
                     </li>
                 </ul>
             </div>
@@ -48,7 +66,7 @@
             <a data-toggle="tooltip" data-placement="top" title="" data-original-title="Lock">
                 <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
             </a>
-            <a data-toggle="tooltip" data-placement="top" title="" href="login.html" data-original-title="Logout">
+            <a data-toggle="tooltip" data-placement="top" title="" href="@Url.RouteUrl("adminLogout")" data-original-title="Logout">
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
             </a>
         </div>

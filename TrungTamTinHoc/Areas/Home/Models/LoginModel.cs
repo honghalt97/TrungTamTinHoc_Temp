@@ -101,6 +101,7 @@ namespace TrungTamTinHoc.Areas.Home.Models
                         ThoiGianTonTai = DateTime.Now.AddHours(cauHinh.ThoiGianTonTaiToken)
                     });
                     result.ThongTinBoSung1 = BaoMat.Base64Encode(token);
+                    result.MsgNo = taiKhoan.GroupOfAccount.FirstOrDefault(x => x.IdGroup <= (int)GroupAccount.Admin && !x.DelFlag) == null ? 27 : 0;
                     context.SaveChanges();
                 }
                 return result;
